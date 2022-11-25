@@ -6,7 +6,7 @@ async function main() {
 
   await matrixCat.deployed();
 
-  console.log(`MatrixCat deployed to ${matrixCat.address} via txn ${matrixCat.deployTransaction}`);
+  console.log(`MatrixCat deployed to ${matrixCat.address} via txn ${matrixCat.deployTransaction.hash}`);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
