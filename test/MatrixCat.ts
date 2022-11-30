@@ -162,7 +162,7 @@ describe("MatrixCat", function () {
         expect(await matrixCat.ownerOf(tokenId)).to.equal(addr2.address);
       });
 
-      it("Non-owner should be able to transfer", async function () {
+      it("Non-owner should not be able to transfer", async function () {
         const { matrixCat, addr1, addr2, tokenId } = await loadFixture(deployAndMint);
         await expect(matrixCat.connect(addr2).transferFrom(addr1.address, addr2.address, tokenId))
               .to.be.revertedWith("ERC721: caller is not token owner or approved");
